@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday Twilight</title>
+  <style>
+    body {
+      margin: 0;
+      overflow: hidden;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      background: radial-gradient(#1b2735, #090a0f);
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    h1 {
+      position: absolute;
+      z-index: 10;
+      font-size: 3.5rem;
+      animation: glow 2.5s ease-in-out infinite alternate;
+      text-align: center;
+      text-shadow: 0 0 10px #fff, 0 0 20px #9b5de5, 0 0 30px #f15bb5;
+    }
+
+    @keyframes glow {
+      0% {
+        transform: scale(1);
+        text-shadow: 0 0 5px #fff, 0 0 15px #9b5de5, 0 0 20px #f15bb5;
+      }
+      100% {
+        transform: scale(1.05);
+        text-shadow: 0 0 15px #fff, 0 0 25px #9b5de5, 0 0 35px #f15bb5;
+      }
+    }
+
+    .star {
+      position: absolute;
+      width: 2px;
+      height: 100px;
+      background: linear-gradient(white, transparent);
+      opacity: 0.8;
+      animation: fall linear infinite;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px);
+        opacity: 0.8;
+      }
+      100% {
+        transform: translateY(110vh);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>🌟 Happy Birthday, Twilight 🌟</h1>
+
+  <script>
+    const numStars = 120;
+
+    for (let i = 0; i < numStars; i++) {
+      const star = document.createElement("div");
+      star.className = "star";
+      star.style.left = Math.random() * 100 + "vw";
+      star.style.animationDuration = 2 + Math.random() * 3 + "s";
+      star.style.animationDelay = Math.random() * 5 + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+</body>
+</html>
